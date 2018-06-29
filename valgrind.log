@@ -1,0 +1,109 @@
+==11724== Memcheck, a memory error detector
+==11724== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==11724== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==11724== Command: ./client
+==11724== Parent PID: 11723
+==11724== 
+--11724-- 
+--11724-- Valgrind options:
+--11724--    -v
+--11724--    --log-file=valgrind.log
+--11724--    --tool=memcheck
+--11724--    --leak-check=full
+--11724--    --show-mismatched-frees=yes
+--11724-- Contents of /proc/version:
+--11724--   Linux version 4.4.0-127-generic (buildd@lcy01-amd64-023) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) ) #153-Ubuntu SMP Sat May 19 10:58:46 UTC 2018
+--11724-- 
+--11724-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--11724-- Page sizes: currently 4096, max supported 4096
+--11724-- Valgrind library directory: /usr/lib/valgrind
+--11724-- Reading syms from /home/wuli/work/ndk_develop/bufferevent/client
+--11724-- Reading syms from /lib/x86_64-linux-gnu/ld-2.23.so
+--11724--   Considering /lib/x86_64-linux-gnu/ld-2.23.so ..
+--11724--   .. CRC mismatch (computed aa979a42 wanted 9019bbb7)
+--11724--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.23.so ..
+--11724--   .. CRC is valid
+--11724-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--11724--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--11724--   .. CRC mismatch (computed eea41ea9 wanted 2009db78)
+--11724--   Considering /usr/lib/debug/usr/lib/valgrind/memcheck-amd64-linux ..
+--11724--   .. CRC is valid
+--11724--    object doesn't have a dynamic symbol table
+--11724-- Scheduler: using generic scheduler lock implementation.
+--11724-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==11724== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-11724-by-wuli-on-???
+==11724== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-11724-by-wuli-on-???
+==11724== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-11724-by-wuli-on-???
+==11724== 
+==11724== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==11724== don't want to do, unless you know exactly what you're doing,
+==11724== or are doing some strange experiment):
+==11724==   /usr/lib/valgrind/../../bin/vgdb --pid=11724 ...command...
+==11724== 
+==11724== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==11724==   /path/to/gdb ./client
+==11724== and then give GDB the following command
+==11724==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=11724
+==11724== --pid is optional if only one valgrind process is running
+==11724== 
+--11724-- REDIR: 0x401cfd0 (ld-linux-x86-64.so.2:strlen) redirected to 0x3809e181 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--11724-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--11724--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--11724--   .. CRC mismatch (computed 2567ccf6 wanted 49420590)
+--11724--   Considering /usr/lib/debug/usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--11724--   .. CRC is valid
+--11724-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--11724--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--11724--   .. CRC mismatch (computed 0e27c9a8 wanted ac585421)
+--11724--   Considering /usr/lib/debug/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--11724--   .. CRC is valid
+==11724== WARNING: new redirection conflicts with existing -- ignoring it
+--11724--     old: 0x0401cfd0 (strlen              ) R-> (0000.0) 0x3809e181 vgPlain_amd64_linux_REDIR_FOR_strlen
+--11724--     new: 0x0401cfd0 (strlen              ) R-> (2007.0) 0x04c31020 strlen
+--11724-- REDIR: 0x401b920 (ld-linux-x86-64.so.2:index) redirected to 0x4c30bc0 (index)
+--11724-- REDIR: 0x401bb40 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c320d0 (strcmp)
+--11724-- REDIR: 0x401dd30 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c35270 (mempcpy)
+--11724-- Reading syms from /home/wuli/work/ndk_develop/libevent/.libs/libevent-2.2.so.1.0.0
+--11724-- Reading syms from /lib/x86_64-linux-gnu/libpthread-2.23.so
+--11724--   Considering /usr/lib/debug/.build-id/ce/17e023542265fc11d9bc8f534bb4f070493d30.debug ..
+--11724--   .. build-id is valid
+--11724-- Reading syms from /lib/x86_64-linux-gnu/libc-2.23.so
+--11724--   Considering /lib/x86_64-linux-gnu/libc-2.23.so ..
+--11724--   .. CRC mismatch (computed 7a8ee3e4 wanted a5190ac4)
+--11724--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.23.so ..
+--11724--   .. CRC is valid
+--11724-- REDIR: 0x533ca00 (libc.so.6:strcasecmp) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--11724-- REDIR: 0x5338280 (libc.so.6:strcspn) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--11724-- REDIR: 0x533ecf0 (libc.so.6:strncasecmp) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--11724-- REDIR: 0x533a6f0 (libc.so.6:strpbrk) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--11724-- REDIR: 0x533aa80 (libc.so.6:strspn) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--11724-- REDIR: 0x533c14b (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--11724-- REDIR: 0x533c1b0 (libc.so.6:memset) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--11724-- REDIR: 0x533a400 (libc.so.6:rindex) redirected to 0x4c308a0 (rindex)
+--11724-- REDIR: 0x533a3c0 (libc.so.6:strncpy) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--11724-- REDIR: 0x5353000 (libc.so.6:__strncpy_sse2_unaligned) redirected to 0x4c31570 (__strncpy_sse2_unaligned)
+--11724-- REDIR: 0x5343760 (libc.so.6:strchrnul) redirected to 0x4c34da0 (strchrnul)
+--11724-- REDIR: 0x5331130 (libc.so.6:malloc) redirected to 0x4c2db20 (malloc)
+--11724-- REDIR: 0x533c3b0 (libc.so.6:__GI_mempcpy) redirected to 0x4c34fa0 (__GI_mempcpy)
+--11724-- REDIR: 0x5338720 (libc.so.6:strlen) redirected to 0x4c30f60 (strlen)
+--11724-- REDIR: 0x541f970 (libc.so.6:__memset_avx2) redirected to 0x4c344c0 (memset)
+--11724-- REDIR: 0x53413f0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--11724-- REDIR: 0x53faea0 (libc.so.6:__memcpy_avx_unaligned) redirected to 0x4c324a0 (memcpy@@GLIBC_2.14)
+--11724-- REDIR: 0x5341470 (libc.so.6:__GI_memcpy) redirected to 0x4c32b00 (__GI_memcpy)
+--11724-- REDIR: 0x533c890 (libc.so.6:__GI_stpcpy) redirected to 0x4c33f80 (__GI_stpcpy)
+--11724-- REDIR: 0x53314f0 (libc.so.6:free) redirected to 0x4c2ed80 (free)
+==11724== 
+==11724== Process terminating with default action of signal 2 (SIGINT)
+==11724==    at 0x50A07B0: __connect_nocancel (syscall-template.S:84)
+==11724==    by 0x401997: ping_socket(char*) (in /home/wuli/work/ndk_develop/bufferevent/client)
+==11724==    by 0x401BB8: search_server_addr() (in /home/wuli/work/ndk_develop/bufferevent/client)
+==11724==    by 0x40107F: main (in /home/wuli/work/ndk_develop/bufferevent/client)
+==11724== 
+==11724== HEAP SUMMARY:
+==11724==     in use at exit: 0 bytes in 0 blocks
+==11724==   total heap usage: 35 allocs, 35 frees, 27,816 bytes allocated
+==11724== 
+==11724== All heap blocks were freed -- no leaks are possible
+==11724== 
+==11724== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==11724== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

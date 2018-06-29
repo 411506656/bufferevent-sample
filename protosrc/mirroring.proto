@@ -1,0 +1,33 @@
+syntax = "proto3";
+package rbs;
+
+message MirroringReport {
+    int32 devicetype = 1;
+    bool isstreamready = 2;
+    string rtspserverurl = 3;
+    string localmac = 4;
+}
+
+
+message MirrorSwitch {
+	uint64 timestamp = 1;
+	bool isbreak = 2;
+}
+
+
+message MirroringRequest {
+	int32 id = 1;
+	oneof Mirroring_MSG{
+		MirroringReport report = 2;
+	}
+	string err = 99;
+}
+
+message MirroringReplay {
+	int32 id = 1;
+	oneof Mirroring_MSG{
+		MirrorSwitch switchon = 2;
+	}
+	string err = 99;
+}
+
